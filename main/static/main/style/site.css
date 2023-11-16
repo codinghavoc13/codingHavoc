@@ -33,6 +33,10 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html body {
+    background-color:rgb(250, 250, 249) !important;
+}
+
 input[name=message] {
     width: 80%;
 }
@@ -43,12 +47,12 @@ input[name=message] {
 }
   
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
+.row.content {height: 100%}
 
 /* Set gray background color and 100% height */
 .sidenav {
 padding-top: 20px;
-background-color: #f1f1f1;
+/* background-color: #f1f1f1; */
 height: 100%;
 }
 
@@ -76,7 +80,6 @@ padding: 15px;
 
 .myButton{
     background-color: #555;
-    border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;

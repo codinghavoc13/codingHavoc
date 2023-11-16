@@ -7,12 +7,14 @@ Coding Havoc - Links
 <li><a href="{% url 'home' %}">Home</a></li>
 <li><a href="{% url 'about' %}">About</a></li>
 <li class="active"><a href="{% url 'links' %}">Links</a></li>
+<li><a href="{% url 'projects' %}">Other Projects</a></li>
+<li><a href="{% url 'hobbies' %}">Hobbies</a></li>
 <li><a href="{% url 'contact' %}">Contact</a></li>
 {% endblock %}
 
 {% block content %}
-<h1>---Under Construction - Links---</h1>
-<p>This page will be all about links to things me...</p>
+<h1>Links</h1>
+<p>Here are a few links that are about me: LinkedIn, my GitHub Dev repo where I upload most of my bigger projects (the code for this site is in a different repo, and I don't upload code from my testing or from courses I take on LinkedIn or Udemy). I'll add more as I expand.</p>
 <hr>
 <div class="row">
     {% for link in linkResults %}
@@ -27,4 +29,6 @@ Coding Havoc - Links
       </div>
     {% endfor %}
   </div>
+  <hr>
+  <p><i>No, I didn't leave out social media (Facebook, Twitter, etc), I just don't have those.</i></p>
 {% endblock %}

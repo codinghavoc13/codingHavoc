@@ -1,0 +1,66 @@
+{% extends "main/layout.html" %}
+{% block title %}
+Coding Havoc - Projects
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'links' %}">Links</a></li>
+<li class="active"><a href="{% url 'projects' %}">Other Projects</a></li>
+<li><a href="{% url 'hobbies' %}">Hobbies</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>Projects</h1>
+<p>These are a few personal projects that I either have worked on over the years. 
+    Some are complete, but others are still a work in progress.</p>
+    <hr>
+<p><a href="#thisSite">This Site</a>---<a href="#fileCabinets">File Cabinets</a>---<a href="#battleship">Battleship</a>---<a href="#schoolManager">School Manager</a></p>
+<hr>
+<h3 id="thisSite">This site</h3>
+<p>You're looking at one now. Built using Python and Django, using Bootstrap
+    for a lot of the design and layout. While not completely dynamic, I am working
+    to avoid static content as much as I can. 
+</p>
+<hr>
+<h3 id="fileCabinets">File Cabinets</h3>
+<p>
+    This is one of my bigger, more elaborate projects that started years ago when I started a course on MongoDB. Driving home from work, I was thinking about it and asked myself how hard it would be to write a basic NoSQL database type system from scratch.
+</p>
+<p>The basic idea behind it is:</p>
+<ul>
+    <li>Information would be stored in Nodes, each Node having a key/value pair</li>
+    <li>Nodes would be stored on Pages</li>
+    <li>Pages would be stored in Folders</li>
+    <li>Folders would either be stored in other Folders or in Drawers</li>
+    <li>Drawers (you guessed it) would be stored in File Cabinets, hence the name of the project</li>
+</ul>
+<p>The data is stored between sessions using XML files.</p>
+<p>Initially developed using Java, I've made some small steps in replicating in C++ C# and Python. The main Java version uses Swing to build out a User Interface, and the C# has a similar User Interface using WPF.</p>
+<hr>
+<h3 id="battleship">Battleship</h3>
+<p>This was actually a final project for one of the course I took. The base assignment was, given a skelaton project, complete the program to allow two users to place their five ships on a board, then play a game of classic Battleship. The program would handle checking for hits or misses. A simple text display showed the board and the results.</p>
+<p>I quickly finished up the base requirement for the assignment and started work on adding to the program, turns out this extra work ended up being an opportunity for bonus points: add to the program and allow a user to play against the program.</p>
+<p><i>"Wouldn't you prefer a good game of chess?" -WOPR</i></p>
+<p>By the time this extra credit was announced, I was half way complete. I mirrored the program's hunting plan on my own, to go with a 'check board' approach, calling every other block and not calling an adjacent block unless I was checking for a hit.In other words: A1, A3, B2, C1, C3 but not the others unless I got a hit in one of those block, and obviously not in that exact order.</p>
+<p>Testing that the AI was balanced was a simple case of replicating the end scene from Wargames and having the AI play 100 games against itself and keeping track of the results, checking that the balance was close to 50/50. I don't remember the numbers but it was close enough for me to call it a success.</p>
+<p>Initially written in Java, I've done some work to replicate it C++, C# and Python</p>
+<a href="#top">Back to the top</a>
+<hr>
+<h3 id="schoolManager">School Manager</h3>
+<p>Seeking a way to apply my Spring Boot, SQL and Web Development skills to something I can show off, I'm working on a Spring Boot web application that could be used to manage information at a school.</p>
+<p>At this point, my plans for what to track include, but are not limited to:</p>
+<ul>
+    <li>Student information</li>
+    <li>Parent and Emergency Contact information</li>
+    <li>Grades for classwork, homework, quizzes, tests, etc</li>
+    <li>Absences and tardiness</li>
+</ul>
+<p>Teachers would enter absences and grades. Office administrators would update tardiness and contact information. Students and parents would be able to view grades, absences and tardiness. Keeping track of which teachers the students had, and which grades were submitted by which teacher in each grade. Parents would be able to enter and update their contact information and emergency contact information. I'm debating adding a very basic messaging system.</p>
+<!-- <h3 id="tag">Title</h3>
+<p>Details</p>   -->
+
+<a href="#top">Back to the top</a>
+{% endblock %}

@@ -31,3 +31,9 @@ def links(request):
 
 def contact(request):
     return render(request,"main/contact.html")
+
+def hobbies(request):
+    return render(request,"main/hobbies.html")
+
+def projects(request):
+    return render(request, "main/projects.html")
