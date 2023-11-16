@@ -1,0 +1,30 @@
+{% extends "main/layout.html" %}
+{% block title %}
+Coding Havoc - Links
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li class="active"><a href="{% url 'links' %}">Links</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>---Under Construction - Links---</h1>
+<p>This page will be all about links to things me...</p>
+<hr>
+<div class="row">
+    {% for link in linkResults %}
+    <div class="col-sm-4">
+        <div class="well link-box">
+          {% load static %}
+          <a href="{{link.site}}" target="_blank">
+              <img src= "{% static link.icon %}"
+              alt="{{link.altText}}" width="100" height="100">
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

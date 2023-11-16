@@ -1,0 +1,25 @@
+{% extends "main/layout.html" %}
+{% block title %}
+Coding Havoc - About
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li class="active"><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'links' %}">Links</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>---Under Construction - About---</h1>
+<p>This page is probably the hardest for me, a place to talk about me and what I've done</p>
+<hr>
+<h3>Past Experience 1</h3>
+<p><i>Lorem ipsum...</i></p>
+<hr>
+<h3>Past Experience 2</h3>
+<p><i>Lorem ipsum...</i></p>
+<hr>
+<h3>Past Experience 3</h3>
+<p><i>Lorem ipsum...</i></p>
+{% endblock %}

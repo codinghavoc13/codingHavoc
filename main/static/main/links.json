@@ -1,7 +1,4 @@
-from django.shortcuts import render
-import json
-
-linkList = [
+[
     {
         "site": "https://www.linkedin.com/in/sean-hayes-1a609888/",
         "icon": "/main/image/linkedin.511x512.png",
@@ -19,15 +16,3 @@ linkList = [
         "randomText": "C"
     }
 ]
-
-def home(request):
-    return render(request,"main/index.html")
-
-def about(request):
-    return render(request,"main/about.html")
-
-def links(request):
-    return render(request,"main/links.html",{'linkResults':linkList})
-
-def contact(request):
-    return render(request,"main/contact.html")
