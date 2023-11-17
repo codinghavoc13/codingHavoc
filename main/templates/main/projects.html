@@ -6,10 +6,7 @@ Coding Havoc - Projects
 {% block navbar %}
 <li><a href="{% url 'home' %}">Home</a></li>
 <li><a href="{% url 'about' %}">About</a></li>
-<li><a href="{% url 'links' %}">Links</a></li>
 <li class="active"><a href="{% url 'projects' %}">Other Projects</a></li>
-<li><a href="{% url 'hobbies' %}">Hobbies</a></li>
-<li><a href="{% url 'contact' %}">Contact</a></li>
 {% endblock %}
 
 {% block content %}
@@ -17,13 +14,18 @@ Coding Havoc - Projects
 <p>These are a few personal projects that I either have worked on over the years. 
     Some are complete, but others are still a work in progress.</p>
     <hr>
-<p><a href="#thisSite">This Site</a>---<a href="#fileCabinets">File Cabinets</a>---<a href="#battleship">Battleship</a>---<a href="#schoolManager">School Manager</a></p>
+    <a class="myButton" role="button" href="#thisSite">This Site</a>
+    <a class="myButton" role="button" href="#fileCabinets">File Cabinets</a>
+    <a class="myButton" role="button" href="#battleship">Battleship</a>
+    <a class="myButton" role="button" href="#schoolManager">School Manager</a>
 <hr>
 <h3 id="thisSite">This site</h3>
 <p>You're looking at one now. Built using Python and Django, using Bootstrap
     for a lot of the design and layout. While not completely dynamic, I am working
     to avoid static content as much as I can. 
 </p>
+<p>The Links and Hobbies/Interests sections of the main page are built pulling information from JSON objects. The Hobbies/Interests section uses the shuffle feature from numpy to shuffle all of them and place them into three different groups.</p>
+<a href="#top">Back to the top</a>
 <hr>
 <h3 id="fileCabinets">File Cabinets</h3>
 <p>
@@ -39,6 +41,7 @@ Coding Havoc - Projects
 </ul>
 <p>The data is stored between sessions using XML files.</p>
 <p>Initially developed using Java, I've made some small steps in replicating in C++ C# and Python. The main Java version uses Swing to build out a User Interface, and the C# has a similar User Interface using WPF.</p>
+<a href="#top">Back to the top</a>
 <hr>
 <h3 id="battleship">Battleship</h3>
 <p>This was actually a final project for one of the course I took. The base assignment was, given a skelaton project, complete the program to allow two users to place their five ships on a board, then play a game of classic Battleship. The program would handle checking for hits or misses. A simple text display showed the board and the results.</p>

@@ -1,4 +1,5 @@
-[
+{
+    "linkList": [
     {
         "site": "https://www.linkedin.com/in/sean-hayes-1a609888/",
         "icon": "/main/image/linkedin.511x512.png",
@@ -15,4 +16,8 @@
         "altText":"HackerRank Profile",
         "randomText": "C"
     }
+],
+"hobbyInterests": [
+    "Running","Hiking","Cycling","Video Games","Star Trek","Star Wars","Battlestar Galactica","Dune","Forged in Fire","Game of Thrones","Big Bang Theory","Whiskey","History","Vikings","Cooking","BattleBots","Mythbusters","Alone"
 ]
+}

@@ -6,16 +6,79 @@ Coding Havoc - Home
 {% block navbar %}
 <li class="active"><a href="{% url 'home' %}">Home</a></li>
 <li><a href="{% url 'about' %}">About</a></li>
-<li><a href="{% url 'links' %}">Links</a></li>
 <li><a href="{% url 'projects' %}">Other Projects</a></li>
-<li><a href="{% url 'hobbies' %}">Hobbies</a></li>
-<li><a href="{% url 'contact' %}">Contact</a></li>
 {% endblock %}
 
 {% block content %}
-<h1>Coding Havoc</h1>
-<p>Welcome to my site, a project I've been meaning to properly build out for years and have now brought to life. On here you will find more information about me, links to my professional profiles (LinkedIn, GitHub, etc), links to other web applications and pages showing some work with Django, Spring Boot, Javascript, Angular, and others.</p>
-<hr>
-<!-- <h3>Test</h3>
-<p>Lorem ipsum...</p> -->
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Who Am I?</h3>
+    <!-- <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350"
+      height="350"> -->
+    <h3>I am a Software Engineer. I am a hater of problems and enjoy finding innovative solutions.</h3>
+    <a class="myButton" role="button" href="{% url 'about' %}">Go here to find out more about me</a>
+</div>
+
+<!-- Second Container Links -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">Where To Find Me?</h3>
+    <div class="row">
+        {% load static %}
+        {% for link in linkResults %}
+        <div class="col-sm-4">
+            <div class="well link-box">
+                {% load static %}
+                <a href="{{link.site}}" target="_blank">
+                    <img src="{% static link.icon %}" alt="{{link.altText}}" width="100" height="100">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Third Container Projects-->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">Personal Programming Projects</h3>
+    <p>I have a couple personal projects I've worked on over the years, in addition to this site, and there is too much to place on this page with everything else. Click the button below to read more about some of the personal programs I've worked on.</p>
+    <a class="myButton" role="button" href="{% url 'about' %}">Click here to read some details about personal projects
+        I've worked on over the years</a>
+</div>
+
+<!-- Fourth Container Hobbies -->
+<div class="container-fluid bg-4 text-center">
+    <h2 class="margin">Hobbies, Interests, TV Shows</h2>
+    <p>These are just a few things I like to do when I not working or shows I like to watch</p>
+    <hr>
+    {% load static %}
+    <div class="col-md-4">
+        <ul class="ulNoBullet">
+            {% for hobby in hobbyList1 %}
+            <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="ulNoBullet">
+            {% for hobby in hobbyList0 %}
+            <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="ulNoBullet">
+            {% for hobby in hobbyList2 %}
+            <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- Fifth Container Contact -->
+<div class="container-fluid bg-5 text-center">
+    <h3 class="margin">Contact</h3>
+    <p>Until I can find something that won't be flooded with spam, the best way to reach me is on my <a href="https://www.linkedin.com/in/sean-hayes-1a609888/"
+            target="_blank">LinkedIn profile</a>.</p>
+    <hr>
+</div>
 {% endblock %}

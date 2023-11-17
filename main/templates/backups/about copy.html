@@ -1,0 +1,36 @@
+{% extends "main/layout.html" %}
+{% block title %}
+Coding Havoc - About
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'home' %}">Home</a></li>
+<li class="active"><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'links' %}">Links</a></li>
+<li><a href="{% url 'projects' %}">Other Projects</a></li>
+<li><a href="{% url 'hobbies' %}">Hobbies</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>About</h1>
+<p>This page is probably the hardest for me, a place to talk about me and what I've done.</p>
+<hr>
+<h3>Software Engineer with Zachary Piper LLC</h3>
+<p>Here I was on a team developing a Spring Web application. Most of my time was spent investigating and repairing defects or issues with the application. I worked on both front end issues working with Javascript and some Angular, backend issues working with Java and a little Spring, as well as investigating an issue with SQL queries.</p>
+<hr>
+<h3>Software Engineer with Raytheon</h3>
+<p>Here I worked on a couple projects. The first was large Java application with a Swing (not Spring) user interface. Most of my work on this project was defect resolution. I did spend some time working with another engineer to implement some UI changes.</p>
+<p>The other big team I worked with was developing a new web application that was still in evaluation steps with the end customer. This project mostly used Java on the backend which is where I primarily worked.</p>
+<hr>
+<h3>Network Engineer with Level 3 Communications</h3>
+<p>For two years, while I was finishing my Computer Science degree, I worked as a Tier 1 Network Engineer for a major telecommunications company that has since been absorbed by another company. My time there was occupied troubleshooting network outages and issues for major companies and clients, reaching out to them or local network providers (both within the US and internationally). On slower nights, I would pass the time working on my programming skills.</p>
+<hr>
+<h3>US Army Signal Corps Officer</h3>
+<p>Anyone familiar with the military knows you bounce around a lot and where a lot of hats. Near the end of my time in uniform, I started the path leading me towards the world of software development. I started with an 'application' built using Microsoft Access using it's forms as the user interface. I was able to build out a rough setup that would have allowed multiple users to submit information back to a backend Access database.</p>
+<p>While working on this one, I was recommended to another team to help transition their tracking system from a monolithic Excel spreadsheet to a more user friendly system. Before I was able to finish this project, we found out that another team had developed a similar system at the US Army headquarters.</p>
+<p>I consider that time well worth it as it allowed me to pick up a fair amount of knowledge working with SQL.</p>
+<hr>
+<!-- <h3>Past Experience 3</h3>
+<p><i>Lorem ipsum...</i></p> -->
+{% endblock %}
