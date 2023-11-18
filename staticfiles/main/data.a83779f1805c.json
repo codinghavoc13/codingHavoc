@@ -1,0 +1,23 @@
+{
+    "linkList": [
+    {
+        "site": "https://www.linkedin.com/in/sean-hayes-1a609888/",
+        "icon": "/main/image/linkedin.511x512.png",
+        "altText":"LinkedIn Profile",
+        "randomText": "A"
+    },{
+        "site": "https://github.com/seanhayes13/dev",
+        "icon": "main/image/github-6980894_640.png",
+        "altText":"GitHub Dev Repo",
+        "randomText": "B"
+    },{
+        "site": "https://www.hackerrank.com/profile/seanhayes13",
+        "icon": "main/image/600px-HackerRank_Icon-1000px.png",
+        "altText":"HackerRank Profile",
+        "randomText": "C"
+    }
+],
+"hobbyInterests": [
+    "Running","Hiking","Cycling","Video Games","Star Trek","Star Wars","Battlestar Galactica","Dune","Forged in Fire","Game of Thrones","Big Bang Theory","Whiskey","History","Vikings","Cooking","BattleBots","Mythbusters","Alone"
+]
+}

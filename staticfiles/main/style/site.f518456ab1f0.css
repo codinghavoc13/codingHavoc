@@ -1,0 +1,171 @@
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+}
+
+.body-content {
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html body {
+    background-color: #dddddd !important;
+}
+
+input[name=message] {
+    width: 80%;
+}
+
+.message_list th,
+td {
+    text-align: left;
+    padding-right: 15px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    /* height: 100%; */
+}
+
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+
+.link-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myButton {
+    background-color: #555;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.myButton:hover {
+    text-decoration: none;
+    color: #555;
+    background-color: white;
+}
+
+/* Simple Me theme */
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+}
+
+p {
+    font-size: 20px;
+}
+
+.margin {
+    margin-bottom: 45px;
+}
+
+/*Who am I*/
+.bg-1 {
+    background-color: #00775f;
+    /* Green */
+    color: #ffffff;
+}
+
+/*Links*/
+.bg-2 {
+    background-color: #474e5d;
+    /* Dark Blue */
+    color: #ffffff;
+}
+
+/*Personal Projects*/
+.bg-3 {
+    background-color: #2f2f2f;
+    /* Black Gray */
+    color: #fff;
+}
+
+/*Hobbies*/
+.bg-4 {
+    background-color: #ffffff;
+    /* White */
+    color: #555555;
+}
+
+/*Contact*/
+.bg-5 {
+    background-color: #ffae00;
+    /* red place holder */
+    color: #252525;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.bg-foot {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    background-color: #312f2f;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.navbar-nav li a:hover {
+    color: #ffffff !important;
+}
+
+.ulNoBullet {
+    list-style-type: none;
+}
