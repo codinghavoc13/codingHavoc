@@ -37,6 +37,7 @@ if "PROD_ENV" in os.environ and os.environ.get("PROD_ENV"):
     print("Setting DEBUG to false")
     DEBUG = False
 else:
+    print("Setting DEBUG to true")
     DEBUG = True
 
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
