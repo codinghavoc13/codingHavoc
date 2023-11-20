@@ -7,7 +7,7 @@ def home(request):
     print("Checking for CI")
     if "PROD_ENV" in os.environ:
         print("HEROKU")
-        if os.environ.get("PROD_ENV"):
+        if os.environ.get("PROD_ENV") == 'true':
             print("PROD_ENV is true")
         else:
             print("PROD_ENV is false")
