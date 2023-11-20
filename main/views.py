@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import json
-import numpy
+# import numpy
 import os
 
 def home(request):
@@ -17,8 +17,9 @@ def home(request):
     data1 = data.read()
     data2 = json.loads(data1)
     
-    hobbies = randomiseHobbies(data2['hobbyInterests'])
-    return render(request,"main/index.html",{'linkResults':data2['linkList'],'hobbyList0':hobbies[0],'hobbyList1':hobbies[1],'hobbyList2':hobbies[2]})
+    # hobbies = randomiseHobbies(data2['hobbyInterests'])
+    # return render(request,"main/index.html",{'linkResults':data2['linkList'],'hobbyList0':hobbies[0],'hobbyList1':hobbies[1],'hobbyList2':hobbies[2]})
+    return render(request,"main/index.html",{'linkResults':data2['linkList']})
 
 def about(request):
     return render(request,"main/about.html")
@@ -26,7 +27,7 @@ def about(request):
 def projects(request):
     return render(request, "main/projects.html")
 
-def randomiseHobbies(arr):
-    numpy.random.shuffle(arr)
-    result = numpy.array_split(arr,3)
-    return result
+# def randomiseHobbies(arr):
+#     numpy.random.shuffle(arr)
+#     result = numpy.array_split(arr,3)
+#     return result
