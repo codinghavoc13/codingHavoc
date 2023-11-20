@@ -34,7 +34,7 @@ IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 # SECURITY WARNING: don't run with debug turned on in production!
 # if not IS_HEROKU_APP:
 print(os.environ.get("PROD_ENV"))
-if "PROD_ENV" in os.environ and os.environ.get("PROD_ENV"):
+if "PROD_ENV" in os.environ and os.environ.get("PROD_ENV") == 'true':
     print("Setting DEBUG to false")
     DEBUG = False
 else:
