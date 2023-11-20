@@ -7,6 +7,10 @@ def home(request):
     print("Checking for CI")
     if "PROD_ENV" in os.environ:
         print("HEROKU")
+        if os.environ.get("PROD_ENV"):
+            print("PROD_ENV is true")
+        else:
+            print("PROD_ENV is false")
     else:
         print("LOCAL")
     data = open('main/static/main/data.json')
