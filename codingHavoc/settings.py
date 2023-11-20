@@ -30,10 +30,9 @@ SECRET_KEY = os.environ.get(
 # also explicitly exclude CI:
 # https://devcenter.heroku.com/articles/heroku-ci#immutable-environment-variables
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
-
+print(IS_HEROKU_APP)
 # SECURITY WARNING: don't run with debug turned on in production!
 # if not IS_HEROKU_APP:
-print(os.environ.get("PROD_ENV"))
 if "PROD_ENV" in os.environ and os.environ.get("PROD_ENV") == 'true':
     print("Setting DEBUG to false")
     DEBUG = 'FALSE'
