@@ -33,9 +33,10 @@ IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # if not IS_HEROKU_APP:
-DEBUG = True
-# else:
-#     DEBUG = False
+if "PROD_ENV" in os.environ and os.environ.get("PROD_ENV"):
+    DEBUG = False
+else:
+    DEBUG = True
 
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
 # validation of the Host header in the incoming HTTP request. On other platforms you may need

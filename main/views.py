@@ -4,6 +4,7 @@ import numpy
 import os
 
 def home(request):
+    print("Checking for CI")
     if "CI" in os.environ:
         print("HEROKU")
     else:
