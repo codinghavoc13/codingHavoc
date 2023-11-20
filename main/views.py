@@ -4,15 +4,15 @@ import numpy
 import os
 
 def home(request):
-    print("Checking for CI")
-    if "PROD_ENV" in os.environ:
-        print("HEROKU")
-        if os.environ.get("PROD_ENV") == 'true':
-            print("PROD_ENV is true")
-        else:
-            print("PROD_ENV is false")
-    else:
-        print("LOCAL")
+    # print("Checking for CI")
+    # if "PROD_ENV" in os.environ:
+    #     print("HEROKU")
+    #     if os.environ.get("PROD_ENV") == 'true':
+    #         print("PROD_ENV is true")
+    #     else:
+    #         print("PROD_ENV is false")
+    # else:
+    #     print("LOCAL")
     data = open('main/static/main/data.json')
     data1 = data.read()
     data2 = json.loads(data1)
