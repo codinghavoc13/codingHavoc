@@ -5,7 +5,7 @@ import os
 
 def home(request):
     print("Checking for CI")
-    if "CI" in os.environ:
+    if "PROD_ENV" in os.environ:
         print("HEROKU")
     else:
         print("LOCAL")
