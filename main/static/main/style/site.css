@@ -93,7 +93,7 @@ body {
 }
 
 p {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .margin {
@@ -159,7 +159,7 @@ p {
     background-color: #312f2f;
     color: #fff;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    /* color: white; */
 }
 
 .navbar-nav li a:hover {
