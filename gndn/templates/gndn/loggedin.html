@@ -1,0 +1,54 @@
+{% extends "gndn/layout.html" %}
+
+{% block title %}
+GNDN Logged In
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="login_dummy/">GNDN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'gndn_main' %}">GNDN Main</a>
+              </li>
+              {% if logged_in_status != True %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gndn_register' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gndn_login' %}">Log In</a>
+              </li>
+              {% endif %}
+              {% if logged_in_status == True%}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'gndn_logged_in' %}">User Page</a>
+              </li>
+              {%endif%}
+        </ul>
+      </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+
+{% if logged_in_status != True %}
+<div>
+    <h1>Not logged in</h1>
+    <p>You are not logged in</p>
+</div>
+{% endif %}
+
+{% if logged_in_status == True %}
+<div>
+    <h1>Welcome {{ firstName }} {{ lastName }}</h1>
+    <p>You are logged in with a user name of {{ userName }}</p>
+    <form name="logoutForm" action="{% url 'logout' %}">
+      <button class="btn btn-danger" type="submit">Logout</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

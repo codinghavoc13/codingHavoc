@@ -1,0 +1,42 @@
+{% extends "gndn/layout.html" %}
+
+{% block title %}
+GNDN Home
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="login_dummy/">GNDN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'gndn_main' %}">GNDN Main</a>
+              </li>
+              {% if logged_in_status != True %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gndn_register' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gndn_login' %}">Log In</a>
+              </li>
+              {% endif %}
+              {% if logged_in_status == True%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gndn_logged_in' %}">Logged In Page</a>
+              </li>
+              {%endif%}
+        </ul>
+      </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Welcome</h1>
+    <p>GNDN is a Star Trek reference. In the original series, there were sets the actors would crawl around that had pipes and conduits everywhere. Many of these pipes and conduits had the letters 'GNDN' written on them. They simply stand for: "<b>G</b>oes <b>N</b>owhere <b>D</b>oes <b>N</b>othing. That's about what this application is. There is a single table to store basic user information (first and last name, user name, and a hashed password). Use the login page to login and access a third page that is only accessible if you are successfully logged in, otherwise, redirects you back to here.</p>
+</div>
+
+{% endblock %}
