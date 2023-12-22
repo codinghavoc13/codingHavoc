@@ -17,6 +17,8 @@ class RegistrationForm(forms.Form):
         u = self.cleaned_data.get('userName')
         p = self.cleaned_data.get('password')
         #add check later to check for existing user with same username
+        if User.objects.filter(userName=u).exists():
+            raise forms.ValidationError('User name "{u}" is already in use')
 
         hashSet = hash_password(p)
         salt, b64_hash = hashSet.split("$", 1)
