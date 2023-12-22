@@ -18,17 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 # from django.conf.urls import url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from gndn import views as gndn_views
 from main import views as main_views
 
 urlpatterns = [
     path("",include("main.urls")),
     path("", main_views.home, name="home"),
     # path('admin/', admin.site.urls)
-    #gndn
-    path('register/', gndn_views.register, name='register_user'),
-    path('logout/',gndn_views.logout, name='logout'),
-    path('login/',gndn_views.login, name='login')
 
 ]
 

@@ -12,12 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import environ
 import secrets
 import django_heroku
 
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -68,7 +65,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'gndn',
     # 'bootstrap5'
 ]
 
@@ -113,19 +109,9 @@ WSGI_APPLICATION = 'codingHavoc.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'postgres',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'control',
-        # 'HOST':'localhost',
-        # 'PORT':'5432'
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_DB'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PW'),
-        'HOST':env('DB_HOST'),
-        'PORT':'5432'
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
     }
 }
 
