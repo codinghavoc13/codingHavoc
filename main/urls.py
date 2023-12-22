@@ -1,6 +1,5 @@
 from django.urls import path
 from main import views as main_views
-from gndn import views as gndn_views
 
 urlpatterns = [
     path("", main_views.home, name="home"),
