@@ -1,3 +1,5 @@
+from django.db import IntegrityError
+from django.forms import ValidationError
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -23,19 +25,15 @@ def gndn_logged_in(request):
 
 def register(request):
     print("gndn.views.register")
-    userName = "WTF"
     new_user = None
     if request.method == "POST":
         form = RegistrationForm(request.POST)
-        #need to add a check to see if the username is already taken
         if form.is_valid():
-            userName = form.cleaned_data['userName']
             new_user = form.prepUser()
             if not new_user:
-                return HttpResponseRedirect('gndn/register')
+                return render(request,'gndn/register.html', {'form':form})
             else:
-                # logged_in = True
-                request.session['userName'] = userName
+                request.session['userName'] = new_user.userName
                 context = {
                     'firstName':new_user.firstName,
                     'lastName':new_user.lastName,
@@ -44,8 +42,7 @@ def register(request):
                 }
                 return render(request, 'gndn/loggedin.html', context=context)
         else:
-            # print(form.errors)
-            raise Http404            
+            return render(request,'gndn/register.html', {'form':form})
     else:
         return HttpResponseRedirect('gndn/register')
 

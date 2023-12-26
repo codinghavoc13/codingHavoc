@@ -37,6 +37,11 @@ GNDN - Register
 <h1>Registration Form</h1>
 <form method="post" name="registerForm" action="{% url 'register_user' %}">
     {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-danger">
+      {{form.errors}}
+    </div>
+    {% endif %}
     <div>
         <p>
             <label>First Name</label>

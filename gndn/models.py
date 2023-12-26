@@ -7,4 +7,4 @@ class User(models.Model):
     lastName = models.CharField(max_length=50)
     passHash = models.CharField(max_length=150)
     passSalt = models.CharField(max_length=150)
-    userName = models.CharField(max_length=50)
+    userName = models.CharField(max_length=50, unique=True)

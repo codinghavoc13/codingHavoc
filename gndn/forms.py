@@ -1,29 +1,32 @@
 from django import forms
+from django.db import IntegrityError
 
 from .passwordUtil import hash_password
 
 from .models import User
 
 class RegistrationForm(forms.Form):
-    firstName = forms.CharField()
-    lastName = forms.CharField()
-    userName = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput())
+    firstName = forms.CharField(required=True)
+    lastName = forms.CharField(required=True)
+    userName = forms.CharField(required=True)
+    password = forms.CharField(required=True, widget=forms.PasswordInput())
 
     def prepUser(self):
         result = None
-        f = self.cleaned_data.get('firstName')
-        l = self.cleaned_data.get('lastName')
-        u = self.cleaned_data.get('userName')
-        p = self.cleaned_data.get('password')
-        #add check later to check for existing user with same username
-        if User.objects.filter(userName=u).exists():
-            raise forms.ValidationError('User name "{u}" is already in use')
+        try:
+            f = self.cleaned_data.get('firstName')
+            l = self.cleaned_data.get('lastName')
+            u = self.cleaned_data.get('userName')
+            p = self.cleaned_data.get('password')
 
-        hashSet = hash_password(p)
-        salt, b64_hash = hashSet.split("$", 1)
-        result = User.objects.create(firstName = f, lastName = l, userName = u, passHash = b64_hash, passSalt = salt)
-        return result
+            hashSet = hash_password(p)
+            salt, b64_hash = hashSet.split("$", 1)
+            result = User.objects.create(firstName = f, lastName = l, userName = u, passHash = b64_hash, passSalt = salt)
+            return result
+        except IntegrityError as e:
+            self.add_error('userName', forms.ValidationError('User name is already in use'))
+            return result
+        
 
 class LoginForm(forms.Form):
     userName = forms.CharField()
