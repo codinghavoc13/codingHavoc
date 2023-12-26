@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gndn', '0005_delete_loginstatus'),
+        ('gndn', '0001_initial'),
     ]
 
     operations = [
