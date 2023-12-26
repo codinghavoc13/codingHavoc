@@ -109,10 +109,6 @@ WSGI_APPLICATION = 'codingHavoc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'postgres',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'control',
-        # 'HOST':'localhost',
         'NAME': os.getenv('DB_DB'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PW'),
