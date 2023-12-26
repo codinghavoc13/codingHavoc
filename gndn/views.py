@@ -18,7 +18,10 @@ def gndn_register(request):
     return render(request, "gndn/register.html")
 
 def gndn_login(request):
-    return render(request, "gndn/login.html")
+    context = {
+        'login_failed':False
+    }
+    return render(request, "gndn/login.html",context=context)
 
 def gndn_logged_in(request):
     return render(request, "gndn/loggedin.html")
@@ -63,8 +66,13 @@ def login(request):
                     'logged_in_status': True
                 }
                 return render(request, 'gndn/loggedin.html', context=context)
+            else:
+                context = {
+                    'login_failed': True
+                }
+                return render(request,'gndn/login.html', context=context)
         else:
-            raise Http404    
+            raise Http404
     else:
         return HttpResponseRedirect('gndn/register')
 

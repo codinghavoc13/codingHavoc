@@ -36,7 +36,6 @@ GNDN Login
 {% block content %}
 <h1>Log In Form</h1>
 <form method="get" name="loginForm" action="{% url 'login' %}">
-    {% csrf_token %}
     <div>
         <p>
             <label>Username</label>
@@ -46,8 +45,10 @@ GNDN Login
             <label>Password</label>
             <input type="password" name="password">
         </p>
-        <input type="hidden" name="csrf_token" value="{{csrf_token}}">
     </div>
+    {% if login_failed == True %}
+    <p style="color: red;"><i>Username or password are incorrect</i></p>
+    {% endif %}
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
 {% endblock %}
