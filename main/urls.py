@@ -1,7 +1,7 @@
 from django.urls import path
 from main import views as main_views
 from gndn import views as gndn_views
-from projectBlog import views as blog_views
+from project_blog import views as blog_views
 
 urlpatterns = [
     path("", main_views.home, name="home"),
@@ -14,5 +14,6 @@ urlpatterns = [
     path("gndn/logged_in/", gndn_views.gndn_logged_in, name="gndn_logged_in"),
     path("gndn/logout/", gndn_views.logout, name="gndn_logout"),
     #projectBlog
-    path("projectBlog/", blog_views.blog_main, name="blog_main")
+    path("project_blog/", blog_views.blog_main, name="blog_main"),
+    path("project_blog/<str:filter>",blog_views.show_filter, name="filtered_blogs")
 ]

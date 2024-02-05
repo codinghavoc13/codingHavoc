@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'main',
     'gndn',
     'bootstrap5',
-    'projectBlog'
+    'project_blog'
 ]
 
 MIDDLEWARE = [
