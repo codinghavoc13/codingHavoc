@@ -19,19 +19,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html body {
+/* html body {
     background-color: #dddddd !important;
-}
-
-input[name=message] {
-    width: 80%;
-}
-
-.message_list th,
-td {
-    text-align: left;
-    padding-right: 15px;
-}
+} */
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -92,9 +82,13 @@ body {
     line-height: 1.8;
 }
 
-/* p {
-    font-size: 16px;
-} */
+p {
+    font-size: 18px;
+}
+
+li {
+    font-size: 18px;
+}
 
 .margin {
     margin-bottom: 45px;
@@ -157,14 +151,14 @@ body {
     font-size: 12px;
     letter-spacing: 5px;
     background-color: #312f2f;
-    color: #fff;
+    /* color: #fff; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* color: white; */
 }
 
-.navbar-nav li a:hover {
+/* .navbar-nav li a:hover {
     color: #ffffff !important;
-}
+} */
 
 .ulNoBullet {
     list-style-type: none;

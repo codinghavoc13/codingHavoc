@@ -14,16 +14,16 @@ Project Blog Home
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">-Home-</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'about' %}">About</a>
+        <a class="nav-link" href="{% url 'about' %}">-About-</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'projects' %}">Other Projects</a>
+        <a class="nav-link" href="{% url 'projects' %}">-Other Projects-</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'blog_main' %}">Project Blog</a>
+        <a class="nav-link" href="{% url 'blog_main' %}">-Project Blog-</a>
       </li>
     </ul>
   </div>
@@ -31,27 +31,31 @@ Project Blog Home
 {% endblock %}
 
 {% block content %}
-<h1>Project Blog Main</h1>
+<h1 id="blog_top">Project Blog Main</h1>
 <hr>
 <div class="row">
-  <div class="col-md-9">
-    {% for blog in blogs %}
-    <h2>{{blog.postTitle}}</h2>
-    <h6>{{blog.postDate}}</h6>
-    <p>{{blog.postText|safe}}</p>
+  <div class="col-md-3">
+    <h2>History</h2>
+    <a class="nav-link" href="{% url 'blog_main' %}">View all</a>
+    {% for blog in recent_blogs|slice:"0:3" %}
+    <div>
+      <a class="nav-link" href="{% url 'single_blog' blog.id %}">{{blog.post_title}}</a>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="col-md-6">
+    {% for blog in blogs|slice:"0:8" %}
+    <h2>{{blog.post_title}}</h2>
+    <h6>{{blog.post_date}}</h6>
+    <p>{{blog.post_text|safe}}</p>
+    <a href="#blog_top">Back to the top</a>
+    <hr>
     {% endfor %}
   </div>
   <div class="col-md-3">
-    <h2>History</h2>
-    {% for blog in recent_blogs|slice:"0:3" %}
-    <div>
-      <span>{{blog.postTitle}}</span>
-    </div>
-    {% endfor %}
-    <hr>
+    <h2>Monthly Archives</h2>
     {% for date_group in blog_date_groups %}
     <div>
-      <!--"{% url 'home' %}"-->
       <a href="{% url 'filtered_blogs' date_group %}">{{date_group}}</a>
     </div>
     {% endfor %}

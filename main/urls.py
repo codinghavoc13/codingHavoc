@@ -15,5 +15,6 @@ urlpatterns = [
     path("gndn/logout/", gndn_views.logout, name="gndn_logout"),
     #projectBlog
     path("project_blog/", blog_views.blog_main, name="blog_main"),
-    path("project_blog/<str:filter>",blog_views.show_filter, name="filtered_blogs")
+    path("project_blog/filter/<str:filter>",blog_views.show_filter, name="filtered_blogs"),
+    path("project_blog/single/<int:blog_id>",blog_views.single_blog, name="single_blog")
 ]
