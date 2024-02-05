@@ -156,9 +156,10 @@ li {
     /* color: white; */
 }
 
-/* .navbar-nav li a:hover {
+.navbar-nav li a:hover {
+    background-color: #868686 !important;
     color: #ffffff !important;
-} */
+}
 
 .ulNoBullet {
     list-style-type: none;
