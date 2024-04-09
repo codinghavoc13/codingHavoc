@@ -46,5 +46,6 @@ wheels/
 !.vscode/extensions.json 
 .history
 
-projectBlog/templates/projectBlog/blogPreview.html
+projectBlog/templates/projectBlog/blog_preview.html
 project_blog/resources/addBlog.sql
+project_blog\templates\project_blog\blog_preview.html
