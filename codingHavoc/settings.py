@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import secrets
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,6 +49,13 @@ DEBUG = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-ALLOWED_HOSTS
 if IS_HEROKU_APP:
     ALLOWED_HOSTS = ["*"]
+    DATABASES = {
+        "default": dj_database_url.config(
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        ),
+    }
 else:
     ALLOWED_HOSTS = []
 
@@ -116,7 +125,7 @@ DATABASES = {
         'HOST':os.getenv('DB_HOST'),
         'PORT':'5432',
         # comment out the line below when testing locally
-        'OPTIONS': {'sslmode': 'require'},
+        # 'OPTIONS': {'sslmode': 'require'},
     }
 }
 
