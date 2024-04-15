@@ -116,7 +116,7 @@ DATABASES = {
         'HOST':os.getenv('DB_HOST'),
         'PORT':'5432',
         # comment out the line below when testing locally
-        'OPTIONS': {'sslmode': 'require'},
+        # 'OPTIONS': {'sslmode': 'require'},
     }
 }
 
